@@ -59,6 +59,31 @@
 
         }
 
+
+        // count the number of project
+        public function count_user_project($user_id){
+            $sql = "SELECT * FROM project WHERE user_id = '$user_id'";
+            $result = $this->conn->query($sql);
+
+            if($result == FALSE){
+                die('ERROR: '.$this->conn->error);
+            }else{
+                return count($result->fetch_assoc());
+            }
+        }
+
+        // count the number of support
+        public function count_user_support($user_id){
+            $sql = "SELECT * FROM payment WHERE user_id = '$user_id'";
+            $result = $this->conn->query($sql);
+
+            if($result == FALSE){
+                die('ERROR: '.$this->conn->error);
+            }else{
+                return $result->num_rows;
+            }
+        }
+
         // PROFILE UPDATE
         public function update_profile($first_name, $last_name, $email, $birthday, $home_address, $website, $password, $user_id){
             // $target_dir = 'user_img/';
@@ -248,6 +273,7 @@
             }
 
         }
+
 
         // PROJECT DELETE
         public function project_delete($project_id){

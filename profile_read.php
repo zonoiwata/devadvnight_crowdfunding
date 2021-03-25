@@ -3,6 +3,9 @@
   $user_id = $_SESSION['user_id'];
 
   $get_profile = $profileObj->get_profile($user_id);
+  print_r($profileObj->count_user_project($user_id));
+//   $count_user_project = $profileObj->count_user_project($user_id);
+//   $count_user_payment = $profileObj->count_user_payment($user_id);
 
 //   echo $_SESSION['user_id'];
 //   die();
@@ -226,7 +229,7 @@ body{
                                                 <label>Total Projects</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Preparing</p>
+                                                <p><?php echo $count_user_project ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -234,7 +237,7 @@ body{
                                                 <label>Total Support</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Preparing</p>
+                                                <p></p>
                                             </div>
                                         </div>
                                         <div class="row">
