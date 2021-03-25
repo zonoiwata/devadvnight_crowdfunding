@@ -39,19 +39,19 @@
          <div class="form-group">
             <label class="control-label" for="p_line1">Line 1</label>
             <div class="controls">
-               <input type="text" name="p_line1" placeholder="" class="form-control" required>
+               <input type="text" name="p_line1" placeholder="Number, Street, Town, Ward..." class="form-control" required>
             </div>
          </div>
          <div class="form-group">
             <label class="control-label" for="p_line2">Line 2</label>
             <div class="controls">
-               <input type="text" name="p_line2" placeholder="" class="form-control">
+               <input type="text" name="p_line2" placeholder="Apartment name etc OPTIONAL" class="form-control">
             </div>
          </div>
          <div class="form-group">
             <label class="control-label" for="p_city">City</label>
             <div class="controls">
-               <input type="text" name="p_city" placeholder="" class="form-control" required>
+               <input type="text" name="p_city" placeholder="City, Prefecture, State" class="form-control" required>
             </div>
          </div>
          <div class="form-group">

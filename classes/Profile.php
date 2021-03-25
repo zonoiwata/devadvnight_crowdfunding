@@ -60,17 +60,35 @@
         }
 
         // PROFILE UPDATE
-        public function update_profile($user_img, $first_name, $last_name, $email, $birthday, $home_address, $website, $password, $user_id){
+        public function update_profile($first_name, $last_name, $email, $birthday, $home_address, $website, $password, $user_id){
+            // $target_dir = 'user_img/';
+            // $target_file = $target_dir.basename($user_img);
+
+            $sql = "UPDATE user_profile SET first_name = '$first_name', last_name = '$last_name', email = '$email', birthday = '$birthday', home_address = '$home_address', website = '$website'  WHERE user_id ='$user_id'";
+            
+            $result = $this->conn->query($sql);
+
+            if($result == TRUE){
+            //    move_uploaded_file($_FILES['user_img']['tmp_name'], $target_file);
+                header('location:profile_read.php'); 
+            }else{
+                die('ERROR: '.$this->conn->error); // die means all execution
+            } 
+
+        }
+
+        // PROFILE UPDATE PICS
+        public function update_profile_img($user_img, $user_id){
             $target_dir = 'user_img/';
             $target_file = $target_dir.basename($user_img);
 
-            $sql = "UPDATE user_profile SET user_img = '$user_img', first_name = '$first_name', last_name = '$last_name', email = '$email', birthday = '$birthday', home_address = '$home_address', website = '$website'  WHERE user_id ='$user_id'";
+            $sql = "UPDATE user_profile SET user_img = '$user_img'  WHERE user_id ='$user_id'";
             
             $result = $this->conn->query($sql);
 
             if($result == TRUE){
                move_uploaded_file($_FILES['user_img']['tmp_name'], $target_file);
-                header('location:profile_read.php'); 
+                header('location:profile_update.php?user_id='.$user_id); 
             }else{
                 die('ERROR: '.$this->conn->error); // die means all execution
             } 
@@ -248,7 +266,17 @@
         // PAYMENT TABLE
         // payment
         public function payment($p_price, $p_name, $p_line1, $p_line2, $p_city, $p_zipcode, $p_country, $card_name, $card_number, $expiry_month, $expiry_year, $cvv, $project_id, $user_id){
-            $sql = "INSERT INTO payment()VALUES";
+            $sql = "INSERT INTO payment(p_price, p_name, p_line1, p_line2, p_city, p_zipcode, p_country, card_name, card_number, expiry_month, expiry_year, cvv, project_id, user_id)VALUES('$p_price', '$p_name', '$p_line1', '$p_line2', '$p_city', '$p_zipcode', '$p_country', '$card_name', '$card_number', '$expiry_month', '$expiry_year', '$cvv', '$project_id', '$user_id')";
+
+            $result = $this->conn->query($sql); // excution of query (translator)
+
+            if($result == TRUE){
+                // $return_id = $this->conn->insert_id;
+                // $_SESSION['return_id'] = $return_id;
+                header('location:thankyou.php');
+            } else{
+                die('ERROR: '.$this->conn->error); // die means stop all execution
+            }
         }
 
     }

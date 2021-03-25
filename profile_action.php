@@ -12,10 +12,12 @@
 
         $profileObj->signup($first_name, $last_name, $email, $password, $confirm_password);
 
-    }elseif(isset($_POST['update_profile'])){
+    }
+    //update profile
+    elseif(isset($_POST['update_profile'])){
         $get_profile = $profileObj->get_profile($_SESSION['user_id']);
         $real_password = $get_profile['password'];
-        $user_img = $_FILES['user_img']['name'];        
+        // $user_img = $_FILES['user_img']['name'];        
 
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
@@ -27,13 +29,21 @@
         $user_id = $_POST['user_id'];
 
         if($password == $real_password){
-            $profileObj->update_profile($user_img, $first_name, $last_name, $email, $birthday, $home_address, $website, $password, $user_id);
+            $profileObj->update_profile($first_name, $last_name, $email, $birthday, $home_address, $website, $password, $user_id);
         }else{
             echo "Please check your password";
         }
         // print_r($_FILES); 
 
-    }elseif(isset($_POST['login'])){
+    }
+    //update profile image
+    elseif(isset($_POST['update_profile_img'])){
+        $user_img = $_FILES['user_img']['name'];  
+        $user_id = $_POST['user_id'];
+        $profileObj->update_profile_img($user_img, $user_id);
+    }
+    // login
+    elseif(isset($_POST['login'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
 
