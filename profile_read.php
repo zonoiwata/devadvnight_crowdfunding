@@ -7,6 +7,12 @@
   $count_user_payment = $profileObj->count_user_support($user_id);
   $total_user_support = $profileObj->total_user_support($user_id);
 
+
+
+//   print_r($total_user_support);
+
+//   die();
+
   // How many month users use
 //   $day1 = $get_profile['date_added'];
 //   $today = date("Y-m-d H:i:s");
@@ -251,7 +257,7 @@ body{
                                                 <label>Total Amount of Supports</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $total_user_support ?></p>
+                                                <p><?php echo $total_user_support['support_pay'] ?></p>
                                             </div>
                                         </div>
                                 <div class="row">

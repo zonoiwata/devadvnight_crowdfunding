@@ -86,13 +86,13 @@
 
         // total user support
         public function total_user_support($user_id){
-            $sql = "SELECT SUM(p_price) FROM payment WHERE user_id = '$user_id'";
+            $sql = "SELECT sum(CAST(p_price AS INT))AS support_pay FROM payment WHERE user_id = '$user_id'";
             $result = $this->conn->query($sql);
 
             if($result == FALSE){
                 die('ERROR: '.$this->conn->error);
             }else{
-                return $result->num_rows;
+                return $result->fetch_assoc();
             }
         }
 
