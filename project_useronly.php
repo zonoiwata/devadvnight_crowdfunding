@@ -134,18 +134,24 @@ body {
     <!-- Category Card -->
     <?php foreach($project_userlist as $row): 
         $project_id = $row['project_id'];
-        // $user_id = $row['user_id'];
+        $total_project_support = $profileObj->total_project_support($project_id);
+        // percentage calculation
+        $tp_ratio = $total_project_support['tp_support'] / $row['total_support'] * 100;
     ?>
     <div class="col-md-4">
         <div class="card rounded">
             <div class="card-image">
                 <span class="card-notify-badge"><?php echo $row['company_name'] ?></span>
-                <span class="card-notify-year"><small>HOT!!</small></span>
+                <span class="card-notify-year">
+                    <strong>
+                        <?php if($total_project_support['tp_support']==FALSE){echo "0%";}else{echo $tp_ratio. "%" ;} ?>
+                    </strong>
+                </span>
                 <img class="img-fluid" src="project_img/<?php echo $row['project_img'] ?>" alt="Alternate Text" style="height:250px; width:auto; object-fit:cover;">
             </div>
             <div class="card-image-overlay m-auto">
                 
-                <small>Total Target Support: JPY <?php echo $row['total_support'] ?></small><br>  
+                <small>Support: <?php if($total_project_support['tp_support']==false){echo "0";}else{echo $total_project_support['tp_support'];} ?> / <?php echo $row['total_support'] ?> JPY</small><br>  
                 <small>Deadline: <?php echo $row['deadline'] ?></small>
 
             </div>

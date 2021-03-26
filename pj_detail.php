@@ -46,7 +46,16 @@
   <body>
   <div class="container">
     <br>  
-    <h2 class="text-center"><?php echo $one_project['tytle'] ?></h2>
+    <h2 class="text-center">
+        <?php echo $one_project['tytle'] ?>
+        <?php if(isset($_SESSION['user_id'])){ ?>
+        <a href="profile_read.php" class="btn btn-info float-right ">Go back to your user page</a>
+        <?php }else{ ?>
+        <a href="login.php" class="btn btn-warning float-right">Login / Sign Up</a>
+        <?php } ?>
+        <a href="pj_read.php" class="btn btn-primary float-right mx-2"> Go Back to Project List</a>
+    </h2>
+    
     <hr>
 
     <!-- Project -->
@@ -198,10 +207,10 @@
 <div class="card-body text-center">
     <h4 class="text-white">Lorem ipsum dolor sit amet. </h4>
 <p class="h5 text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, aspernatur?</p>   <br>
-<p>
+<!-- <p>
     <a href="profile_read.php" class="btn btn-warning m-2"> Go Back to your Page</a>
     <a href="pj_read.php" class="btn btn-info m-2"> Go Back to Project List</a>
-</p>
+</p> -->
 </div>
 <br><br><br>
 </article>    

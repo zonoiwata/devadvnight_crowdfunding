@@ -86,7 +86,7 @@
 
         // total user support
         public function total_user_support($user_id){
-            $sql = "SELECT sum(CAST(p_price AS INT))AS support_pay FROM payment WHERE user_id = '$user_id'";
+            $sql = "SELECT sum(CAST(p_price AS UNSIGNED))AS support_pay FROM payment WHERE user_id = '$user_id'";
             $result = $this->conn->query($sql);
 
             if($result == FALSE){
@@ -296,6 +296,18 @@
                 header('location:profile_read.php');
             }else{
                 die("ERROR: ".$this->conn->error);
+            }
+        }
+
+        // calculate tota; project support
+        public function total_project_support($project_id){
+            $sql = "SELECT sum(CAST(p_price AS UNSIGNED))AS tp_support FROM payment WHERE project_id = '$project_id'";
+            $result = $this->conn->query($sql);
+
+            if($result == FALSE){
+               return FALSE;
+            }else{
+                return $result->fetch_assoc();
             }
         }
 
