@@ -1,9 +1,10 @@
 <?php
   include 'profile_action.php';
   $user_id = $_SESSION['user_id'];
-
   session_destroy();
-
+  // http_response_code( 301 ) ;
+  // header('location:login.php');
+  // exit;
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,13 +14,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta http-equiv="refresh" content=" 5; url=login.php">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
-        <h1 class=" mt-5 text-capitalize">OK, logout. we hope you'll be back soon again!</h1>
-        <p>
+        <h1 class=" mt-5 text-capitalize">Thank you for using!</h1>
+        <p class="m-3">This page will automatically move to login page.</p>
+        <p class="m-3">If not, please click the button.</p>
+        <p class="m-3">
             <a href='login.php'>
                 Back to Login Page.
             </a>

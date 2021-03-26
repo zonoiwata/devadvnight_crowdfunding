@@ -68,13 +68,25 @@
             if($result == FALSE){
                 die('ERROR: '.$this->conn->error);
             }else{
-                return count($result->fetch_assoc());
+                return $result->num_rows;
             }
         }
 
         // count the number of support
         public function count_user_support($user_id){
             $sql = "SELECT * FROM payment WHERE user_id = '$user_id'";
+            $result = $this->conn->query($sql);
+
+            if($result == FALSE){
+                die('ERROR: '.$this->conn->error);
+            }else{
+                return $result->num_rows;
+            }
+        }
+
+        // total user support
+        public function total_user_support($user_id){
+            $sql = "SELECT SUM(p_price) FROM payment WHERE user_id = '$user_id'";
             $result = $this->conn->query($sql);
 
             if($result == FALSE){

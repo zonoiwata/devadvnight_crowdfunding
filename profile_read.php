@@ -1,11 +1,17 @@
 <?php
   include 'profile_action.php';
   $user_id = $_SESSION['user_id'];
-
   $get_profile = $profileObj->get_profile($user_id);
-  print_r($profileObj->count_user_project($user_id));
-//   $count_user_project = $profileObj->count_user_project($user_id);
-//   $count_user_payment = $profileObj->count_user_payment($user_id);
+
+  $count_user_project = $profileObj->count_user_project($user_id);
+  $count_user_payment = $profileObj->count_user_support($user_id);
+  $total_user_support = $profileObj->total_user_support($user_id);
+
+  // How many month users use
+//   $day1 = $get_profile['date_added'];
+//   $today = date("Y-m-d H:i:s");
+//   $interval = $day1->diff($today);
+
 
 //   echo $_SESSION['user_id'];
 //   die();
@@ -234,18 +240,18 @@ body{
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Total Support</label>
+                                                <label>Total Number of Supports</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p></p>
+                                                <p><?php echo $count_user_payment ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Availability</label>
+                                                <label>Total Amount of Supports</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>6 months</p>
+                                                <p><?php echo $total_user_support ?></p>
                                             </div>
                                         </div>
                                 <div class="row">
