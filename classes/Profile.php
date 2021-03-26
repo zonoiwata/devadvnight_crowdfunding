@@ -177,8 +177,9 @@
                 // move_uploaded_file($_FILES['project_img']['tmp_name'], $target_file);
                 $return_id = $this->conn->insert_id;
                 $_SESSION['return_id'] = $return_id;
-
                 header('location:project_useronly.php?user_id='.$user_id);
+                // $project_id = $_GET['project_id'];
+                // header('location:pj_update.php?project_id='.$project_id);
             } else{
                 die('ERROR: '.$this->conn->error); // die means stop all execution
             }

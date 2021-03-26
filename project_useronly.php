@@ -138,7 +138,7 @@ body {
         // percentage calculation
         $tp_ratio = $total_project_support['tp_support'] / $row['total_support'] * 100;
     ?>
-    <div class="col-md-4">
+    <div class="col-md-4 mt-4">
         <div class="card rounded">
             <div class="card-image">
                 <span class="card-notify-badge"><?php echo $row['company_name'] ?></span>

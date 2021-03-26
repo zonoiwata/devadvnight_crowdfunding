@@ -241,7 +241,7 @@ body{
                                                 <label>Total Projects</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $count_user_project ?></p>
+                                                <p><?php if($count_user_project==0){echo "None";}else{echo $count_user_project;} ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -249,7 +249,7 @@ body{
                                                 <label>Total Number of Supports</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $count_user_payment ?></p>
+                                                <p><?php if($count_user_payment==0){echo "None";}else{echo $count_user_payment;} ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -257,7 +257,7 @@ body{
                                                 <label>Total Amount of Supports</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $total_user_support['support_pay'] ?></p>
+                                                <p><?php if($total_user_support['support_pay']==FALSE){echo "None";}else{echo $total_user_support['support_pay'];} ?></p>
                                             </div>
                                         </div>
                                 

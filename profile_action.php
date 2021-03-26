@@ -94,7 +94,7 @@
         $return_discription = $_POST['return_discription'];
         $return_date = $_POST['return_date'];
 
-        $company_name = $_POST['comapny_name'];
+        $company_name = $_POST['company_name'];
         $company_url = $_POST['company_url'];
         $movie_url = $_POST['movie_url'];
 

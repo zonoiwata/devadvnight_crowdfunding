@@ -2,6 +2,7 @@
     include 'profile_action.php';
     $project_id = $_GET['project_id'];
     $one_project = $profileObj->get_one_project($project_id);
+    $total_project_support = $profileObj->total_project_support($project_id);
 ?>
 <!doctype html>
 <html lang="en">
@@ -80,10 +81,9 @@
         
 
     <p class="price-detail-wrap"> 
-        <span class="price h3 text-warning"> 
-            <span class="currency">JPY: </span><span class="num"><?php echo $one_project['total_support'] ?></span>
+        <span class="price h3"> 
+        Current / Total: <span class="text-success"><?php if($total_project_support['tp_support']==false){echo "0";}else{echo $total_project_support['tp_support'];} ?></span> / <span class="text-success"><?php echo $one_project['total_support'] ?></span> JPY
         </span> 
-        <span>Total Target Support</span> 
     </p> <!-- price-detail-wrap .// -->
     <dl class="item-property">
     <dt>Message</dt>
@@ -134,9 +134,9 @@
         <h3 class="title mb-3">Return: <?php echo $one_project['return_product'] ?></h3>
 
     <p class="price-detail-wrap"> 
-        <span class="price h3 text-warning"> 
+        <span class="price h3"> 
             <!-- project tytle -->
-            <span class="currency">JPY: </span><span class="num"><?php echo $one_project['return_support'] ?></span>
+            <span class="num text-warning"><?php echo $one_project['return_support'] ?></span> JPY
         </span> <p>Requested Support for each</p>
         
     </p> <!-- price-detail-wrap .// -->
