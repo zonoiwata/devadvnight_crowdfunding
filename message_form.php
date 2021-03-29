@@ -28,10 +28,11 @@
                 <div class="form">
                     <form role="form" class="form-horizontal w-100" action="profile_action.php" method="post">
                         <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
-                        <input type="hidden" name="project_id" value="<?php echo $project_id ?>">                       
+                        <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
+                        <input type="hidden" name="ct_project" value="<?php echo $one_project['tytle'] ?>">                           
                         <div class="form-group">
                         <label class="col-sm-2" for="inputTo">Project</label>
-                        <input type="text" class="form-control" name="ct_project" value="<?php echo $one_project['tytle'] ?>" disabled>
+                        <input type="text" class="form-control" value="<?php echo $one_project['tytle'] ?>" disabled>
                         </div>
                         <div class="form-group">
                         <label class="col-sm-2" for="inputTo">Email</label>
