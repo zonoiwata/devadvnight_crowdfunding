@@ -150,47 +150,10 @@
     </dl>  <!-- item-property-hor .// -->
     <dl class="param param-feature">
     
-    <form action="project_payment.php"> <!-- form start .// -->
-    <hr>
-        <!--
-        <div class="row">
-            <div class="col-sm-5">
-                <dl class="param param-inline">
-                <dt>Quantity: </dt>
-                <dd>
-                    <select class="form-control form-control-sm" style="width:70px;">
-                        <option> 1 </option>
-                        <option> 2 </option>
-                        <option> 3 </option>
-                        <option> 4 </option>
-                        <option> 5 </option>
-                    </select>
-                </dd>
-                </dl>  
-            </div> 
-            <div class="col-sm-7">
-                <dl class="param param-inline">
-                    <dt>Size: </dt>
-                    <dd>
-                        <label class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <span class="form-check-label">SM</span>
-                        </label>
-                        <label class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <span class="form-check-label">MD</span>
-                        </label>
-                        <label class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <span class="form-check-label">XXL</span>
-                        </label>
-                    </dd>
-                </dl>  
-            </div>  
-        </div> -->
+    <form action="project_payment.php"> <!-- form start .// -->    
         <hr>
         <a href="project_payment.php?project_id=<?php echo $project_id ?>" class="btn btn-lg btn-primary text-uppercase"> Support! </a>
-        <a href="message_form.php" class="btn btn-lg btn-outline-primary text-uppercase"> Ask to Owner </a>
+        <a href="message_form.php?project_id=<?php echo $project_id ?>" class="btn btn-lg btn-outline-primary text-uppercase"> Ask to Owner </a>
         </form> <!-- form end .// -->
     </article> <!-- card-body.// -->
             </aside> <!-- col.// -->

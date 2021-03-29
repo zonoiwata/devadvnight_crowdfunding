@@ -184,6 +184,19 @@
        }else{
            echo "Please check your password";
        }
+    }
+
+
+    // message form
+    elseif(isset($_POST['ct_send'])){
+        $user_id = $_POST['user_id'];
+        $project_id = $_POST['project_id'];
+        $ct_project = $_POST['ct_project'];
+        $ct_email = $_POST['ct_email'];
+        $ct_subject = $_POST['ct_subject'];
+        $ct_message = $_POST['ct_message'];
+            
+        $profileObj->ct_send($user_id, $project_id, $ct_project, $ct_email, $ct_subject, $ct_message);
 
     }
 

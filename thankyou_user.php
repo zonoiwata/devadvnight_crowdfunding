@@ -11,6 +11,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta http-equiv="refresh" content=" 10; url=pj_read.php">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
@@ -19,11 +21,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title text-uppercase">Payment complete!</h4>
+                    <h4 class="modal-title text-uppercase">Thank you for your message!</h4>
                 </div>
                 <div class="modal-body">
                     <p class="text-capitalize">Thank you! Keep on your job!</p>
                     <div class="text-center">
+                        <a href="pj_read.php" class="btn btn-primary btn-md mx-3">Go Back to search project</a>
                         <a href="profile_read.php" class="btn btn-success btn-md mx-3">Go Back to your page</a>
                     </div>
                     <!-- <div class="text-center">

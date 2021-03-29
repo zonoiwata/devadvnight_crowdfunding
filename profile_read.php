@@ -189,8 +189,9 @@ body{
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6 font-weight-bold">
-                                                <?php echo "<span class='text-capitalize'>". $get_profile['first_name']."</span>" ?> 
-                                                <?php echo "<span class='text-uppercase'>".$get_profile['last_name']."</span>" ?>
+                                                <p>
+                                                    <?php echo "<span class='text-capitalize'>". $get_profile['first_name']."</span>" ?> <?php echo "<span class='text-uppercase'>".$get_profile['last_name']."</span>" ?>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row">

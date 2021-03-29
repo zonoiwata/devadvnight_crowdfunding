@@ -1,3 +1,11 @@
+<?php
+    include 'profile_action.php';
+    $user_id = $_SESSION['user_id'];
+    $get_profile = $profileObj->get_profile($user_id);
+
+    $project_id = $_GET['project_id'];
+    $one_project = $profileObj->get_one_project($project_id);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,25 +24,38 @@
             <div class="panel-heading clearfix">
             <h3 class="panel-title">Message Form</h3>
             </div>
-            <div class="form">
-                <form role="form" class="form-horizontal w-100" action="#" method="post">
-                    <div class="form-group">
-                    <label class="col-sm-2" for="inputTo">To</label>
-                    <input type="email" class="form-control" placeholder="Your Email Address">
-                    </div>
-                    <div class="form-group">
-                    <label class="col-sm-2" for="inputSubject">Subject</label>
-                    <input type="text" class="form-control" name="ct_subject" placeholder="subject">
-                    </div>
-                    <div class="form-group">
-                    <label class="col-sm-12" for="inputBody">Message</label>
-                    <textarea name="ct_message" class="form-control" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="ct_send" value="SEND!" class="btn btn-success">
-                    </div>
-                </form>
-            </div>
+            <?php if(isset($_SESSION['user_id'])){ ?>
+                <div class="form">
+                    <form role="form" class="form-horizontal w-100" action="profile_action.php" method="post">
+                        <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
+                        <input type="hidden" name="project_id" value="<?php echo $project_id ?>">                       
+                        <div class="form-group">
+                        <label class="col-sm-2" for="inputTo">Project</label>
+                        <input type="text" class="form-control" name="ct_project" value="<?php echo $one_project['tytle'] ?>" disabled>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-2" for="inputTo">Email</label>
+                        <input type="email" class="form-control" placeholder="Your Email Address" name="ct_email" value="<?php echo $get_profile['email'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-2" for="inputSubject">Subject</label>
+                        <input type="text" class="form-control" name="ct_subject" placeholder="within 100 letters" required>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-12" for="inputBody">Message</label>
+                        <textarea name="ct_message" class="form-control" cols="30" rows="10" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="ct_send" value="SEND!" class="btn btn-success">
+                            <a class="btn btn-dark mx-3" href="pj_detail.php?project_id=<?php echo $project_id ?>">Back</a>
+                        </div>
+                    </form>
+                </div>
+            <?php }else{ ?>
+                <h3 class="mt-5">Sorry! Please login/sign up your account at first!</h3>
+                <a href="login.php" class="btn btn-warning float-right">Login / Sign Up</a>
+                <a class="btn btn-dark mx-3" href="pj_detail.php?project_id=<?php echo $project_id ?>">Back</a>
+            <?php } ?>            
       </div>
 	</div>
 </div>

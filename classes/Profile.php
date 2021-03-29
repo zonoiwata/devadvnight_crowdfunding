@@ -330,6 +330,21 @@
             }
         }
 
+        // message form
+        public function ct_send($user_id, $project_id, $ct_project, $ct_email, $ct_subject, $ct_message){ 
+            
+            $sql = "INSERT INTO message_form(user_id, project_id, ct_project, ct_email, ct_subject, ct_message)VALUES('$user_id', '$project_id', '$ct_project', '$ct_email', '$ct_subject', '$ct_message')";
+
+            $result = $this->conn->query($sql); // excution of query (translator)
+
+            if($result == TRUE){
+                header('location:thankyou_user.php?user_id='.$user_id);                
+            } else{
+                die('ERROR: '.$this->conn->error); // die means stop all execution
+            }
+
+        }
+
     }
 
 ?> 
