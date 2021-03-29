@@ -209,11 +209,11 @@ a{color:inherit;text-decoration:none}
                     <div class="for-pwd-htm">
                         <div class="group">
                             <!-- <label for="first_name" class="label">First Name</label> -->
-                            <input id="first_name" type="text" class="input" placeholder="First Name" required>
-                            <input id="last_name" type="text" class="input mt-2" placeholder="Last Name" required>
-                            <input id="email" type="email" class="input mt-2" placeholder="Email" required>
-                            <input id="password" type="password" class="input mt-2" placeholder="Password" required>
-                            <input name="confirm_password" type="password" class="input mt-2" Placeholder="Confirm Password" required>
+                            <input name="first_name" id="first_name" type="text" class="input" placeholder="First Name" required>
+                            <input name="last_name" id="last_name" type="text" class="input mt-2" placeholder="Last Name" required>
+                            <input name="email" id="email" type="email" class="input mt-2" placeholder="Email" required>
+                            <input name="password" id="password" type="password" class="input mt-2" placeholder="Password" required>
+                            <input name="confirm_password" id="confirm_password" type="password" class="input mt-2" Placeholder="Confirm Password" required>
                         </div>                         
                         <div class="group">
                             <input type="submit" class="button" value="Sign Up!" name="signup">

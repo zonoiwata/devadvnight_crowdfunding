@@ -136,7 +136,7 @@ body {
         $project_id = $row['project_id'];
         $total_project_support = $profileObj->total_project_support($project_id);
         // percentage calculation
-        $tp_ratio = $total_project_support['tp_support'] / $row['total_support'] * 100;
+        $tp_ratio = round($total_project_support['tp_support'] / $row['total_support'] * 100, 1);
     ?>
     <div class="col-md-4 mt-4">
         <div class="card rounded">
