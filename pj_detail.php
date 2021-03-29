@@ -52,9 +52,9 @@
         <?php if(isset($_SESSION['user_id'])){ ?>
         <a href="profile_read.php" class="btn btn-info float-right ">Go back to your user page</a>
         <?php }else{ ?>
-        <a href="login.php" class="btn btn-warning float-right">Login / Sign Up</a>
+        <!-- <a href="login.php" class="btn btn-warning float-right">Login / Sign Up</a> -->
         <?php } ?>
-        <a href="pj_read.php" class="btn btn-primary float-right mx-2"> Go Back to Project List</a>
+        <!-- <a href="pj_read.php" class="btn btn-primary float-right mx-2"> Go Back to Project List</a> -->
     </h2>
     
     <hr>
@@ -149,12 +149,17 @@
     <dd><?php echo $one_project['return_date'] ?></dd>
     </dl>  <!-- item-property-hor .// -->
     <dl class="param param-feature">
-    
-    <form action="project_payment.php"> <!-- form start .// -->    
-        <hr>
-        <a href="project_payment.php?project_id=<?php echo $project_id ?>" class="btn btn-lg btn-primary text-uppercase"> Support! </a>
-        <a href="message_form.php?project_id=<?php echo $project_id ?>" class="btn btn-lg btn-outline-primary text-uppercase"> Ask to Owner </a>
+    <?php if(isset($_SESSION['user_id'])){ ?>
+        <form action="project_payment.php"> <!-- form start .// -->    
+            <hr>
+            <a href="project_payment.php?project_id=<?php echo $project_id ?>" class="btn btn-lg btn-primary text-uppercase"> Support! </a>
+            <a href="message_form.php?project_id=<?php echo $project_id ?>" class="btn btn-lg btn-outline-primary text-uppercase"> Ask to Owner </a>
         </form> <!-- form end .// -->
+    <?php }else{ ?>
+        <h3 class="mt-5">You need to Login / Sign Up before Support</h3>
+        <a href="login.php" class="btn btn-warning">Login / Sign Up</a>
+        <a class="btn btn-primary mx-3" href="pj_read.php">Back</a>
+     <?php } ?>   
     </article> <!-- card-body.// -->
             </aside> <!-- col.// -->
         </div> <!-- row.// -->

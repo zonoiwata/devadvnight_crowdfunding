@@ -9,7 +9,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Message</title>
+    <title>Message Form</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,6 @@
             <div class="panel-heading clearfix">
             <h3 class="panel-title">Message Form</h3>
             </div>
-            <?php if(isset($_SESSION['user_id'])){ ?>
                 <div class="form">
                     <form role="form" class="form-horizontal w-100" action="profile_action.php" method="post">
                         <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
@@ -52,11 +51,7 @@
                         </div>
                     </form>
                 </div>
-            <?php }else{ ?>
-                <h3 class="mt-5">Sorry! Please login/sign up your account at first!</h3>
-                <a href="login.php" class="btn btn-warning float-right">Login / Sign Up</a>
-                <a class="btn btn-dark mx-3" href="pj_detail.php?project_id=<?php echo $project_id ?>">Back</a>
-            <?php } ?>            
+                      
       </div>
 	</div>
 </div>

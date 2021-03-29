@@ -13,7 +13,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Project List</title>
+    <title>Top Page</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -129,9 +129,12 @@ body {
   <body>
   <div class="container">
     <br>
-    <h2>Search & Support Profile 
-        <?php if(isset($_SESSION['user_id'])){ ?>
-        <a href="profile_read.php" class="btn btn-info float-right ">Go back to your user page</a>
+    <h2>Search & Support Project 
+        <?php if(isset($_SESSION['user_id'])){ 
+            $user_id = $_SESSION['user_id'];
+            $get_profile = $profileObj->get_profile($user_id); ?>
+        <a href="profile_read.php" class="btn btn-info float-right">Go back to your user page</a>
+        <p class="small float-right mx-2 text-muted">Welcome, <?php echo $get_profile['first_name'] ?> <?php echo $get_profile['last_name'] ?> !</p>        
         <?php }else{ ?>
         <a href="login.php" class="btn btn-warning float-right">Login / Sign Up</a>
         <?php } ?>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Welcome Back!!</title>
+    <title>Login, Sign Up</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -194,9 +194,13 @@ a{color:inherit;text-decoration:none}
                         <div class="group">
                             <label for="password" class="label">Password</label>
                             <input name="password" type="password" class="input" data-type="password" required>
-                        </div>
+						</div>
+						<div class="group">
+							<a href="#">Forgot Password?</a>
+						</div>
                         <div class="group">
-                            <input type="submit" class="button" value="Sign In" name="login">
+							<input type="submit" class="btn btn-primary float-left" value="Sign In" name="login">
+							<a href="pj_read.php" class="btn btn-warning mx-2">Search Project as Guest</a>
                         </div>
                         <div class="hr"></div>
                     </div>
@@ -210,23 +214,7 @@ a{color:inherit;text-decoration:none}
                             <input id="email" type="email" class="input mt-2" placeholder="Email" required>
                             <input id="password" type="password" class="input mt-2" placeholder="Password" required>
                             <input name="confirm_password" type="password" class="input mt-2" Placeholder="Confirm Password" required>
-                        </div>
-                        <!-- <div class="group">
-                            <label for="last_name" class="label">Last Name</label>
-                            <input id="last_name" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="email" class="label">Email</label>
-                            <input id="email" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="password" class="label">Password</label>
-                            <input id="password" type="password" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="confirm_password" class="label">Confirm Password</label>
-                            <input name="confirm_password" type="password" class="input">
-                        </div> -->
+                        </div>                         
                         <div class="group">
                             <input type="submit" class="button" value="Sign Up!" name="signup">
                         </div>
@@ -234,8 +222,7 @@ a{color:inherit;text-decoration:none}
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
     </div>
 
 
